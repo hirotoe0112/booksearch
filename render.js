@@ -26,6 +26,8 @@ window.onload = function(){
         this.validate();
         //検索実行
         if(this.errorMessage == ""){
+          //ハイフンを削除
+          this.searchWord = this.searchWord.replace(/-/g, "");
           this.getData();
         }
       },
