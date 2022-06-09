@@ -6,7 +6,8 @@ var vueData = {
   errorMessage:"",
   book:{
     title:"",
-    author:""
+    author:"",
+    image:""
   },
   available:false
 }
@@ -26,6 +27,13 @@ window.onload = function(){
         this.validate();
         //検索実行
         if(this.errorMessage == ""){
+<<<<<<< Updated upstream
+=======
+          //画像を初期化
+          this.book.image = "./noimage.png";
+          //ハイフンを削除
+          this.searchWord = this.searchWord.replace(/-/g, "");
+>>>>>>> Stashed changes
           this.getData();
         }
       },
@@ -49,13 +57,17 @@ window.onload = function(){
           })
           .then(json => {
             if(json[0] != null){
+              let onix = json[0].onix;
               this.available = true;
-              this.book.title = json[0].onix.DescriptiveDetail.TitleDetail.TitleElement.TitleText.content;
-              this.book.author = json[0].onix.DescriptiveDetail.Contributor[0].PersonName.content;
+              this.book.title = onix.DescriptiveDetail.TitleDetail.TitleElement.TitleText.content;
+              this.book.author = onix.DescriptiveDetail.Contributor[0].PersonName.content;
+              let image = onix.CollateralDetail.SupportingResource[0].ResourceVersion[0].ResourceLink;
+              if(image != null){
+                this.book.image = image;
+              }
             }else{
               this.errorMessage = "検索結果がありません。";
             }
-            console.log(json[0]);
           });
       }
     },

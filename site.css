@@ -1,3 +1,21 @@
 .error{
   color:#ff0000;
 }
+
+img{
+  width: 200px;
+  height: auto;
+}
+
+h2{
+  font-size: 1.1em;
+  font-weight: bold;
+  text-decoration: underline;
+  margin-bottom: 0px;
+  line-height: 1;
+}
+
+.detail{
+  font-size: 0.9em;
+  margin-top: 0px;
+}

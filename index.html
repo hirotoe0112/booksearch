@@ -14,10 +14,13 @@
         <template v-if="available">
           <template>
             <div>
-              title: <span>{{book.title}}</span>
+              <img v-bind:src="book.image">
             </div>
-            <div>
-              author: <span>{{book.author}}</span>
+            <h2>
+              <span>{{book.title}}</span>
+            </h2>
+            <div class="detail">
+              <span>{{book.author}}</span>
             </div>
           </template>
           <template>
