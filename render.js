@@ -27,13 +27,10 @@ window.onload = function(){
         this.validate();
         //検索実行
         if(this.errorMessage == ""){
-<<<<<<< Updated upstream
-=======
           //画像を初期化
           this.book.image = "./noimage.png";
           //ハイフンを削除
           this.searchWord = this.searchWord.replace(/-/g, "");
->>>>>>> Stashed changes
           this.getData();
         }
       },
